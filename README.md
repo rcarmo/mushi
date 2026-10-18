@@ -11,6 +11,8 @@ WebView UI and a signed Termux ARM64 **Bun 1.4.3** runtime.
 - Markdown, code highlighting, tool cards and Japanese ruby/furigana rendering.
 - Foreground service and app-private Unix socket; no public agent TCP listener.
 
+![Mushi running a codemode web search, with Japanese ruby annotations and romaji output](docs/screenshot.webp)
+
 ## Build and develop
 
 ```sh
