@@ -1,0 +1,13 @@
+{
+  "applicationId": "io.carmo.mushi",
+  "prefix": "/data/data/io.carmo.mushi/files/usr",
+  "packagesRevision": "ae877f2c6a2b2318abeb43699d6ec5f619c216a6",
+  "architectures": {
+    "aarch64": "arm64-v8a",
+    "arm": "armeabi-v7a",
+    "i686": "x86",
+    "x86_64": "x86_64"
+  },
+  "runtimeExecutable": "bun",
+  "minimumAndroidApi": 28
+}

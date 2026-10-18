@@ -1,0 +1,17 @@
+node_modules/
+build/
+.gradle/
+local.properties
+*.apk
+*.jks
+*.keystore
+*.p12
+*.pfx
+.env
+.env.*
+!.env.example
+.mushi/
+coverage/
+.DS_Store
+__pycache__/
+*.py[cod]

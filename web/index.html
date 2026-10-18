@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'none'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <title>Mushi</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header><div><strong class="brand"><img src="/mushi.svg" alt="" class="brand-icon">mushi</strong><small id="status" role="status">Connecting…</small></div><button id="settingsButton" aria-label="Settings">Settings</button></header>
+  <nav aria-label="Controls"><button id="start">Start</button><button id="stop" hidden>Stop</button></nav>
+  <aside id="notice" role="alert" hidden></aside>
+  <section id="settings" hidden>
+    <h2>Model</h2>
+    <p>Commands can change files and run programs.</p>
+    <form id="config">
+      <label>Provider<select id="provider"><option value="openai-codex">OpenAI (ChatGPT)</option><option value="github-copilot">GitHub Copilot</option><option value="anthropic">Anthropic</option><option value="openai">OpenAI API</option></select></label>
+      <p id="authStatus" role="status">Choose a provider.</p>
+      <div class="auth-controls"><button id="signIn" type="button">Sign in</button><button id="cancelLogin" type="button" hidden>Cancel sign-in</button><button id="logout" type="button" hidden>Sign out</button></div>
+      <div id="deviceInfo" hidden>
+        <p>Enter this code on the provider’s verification page:</p>
+        <code id="userCode"></code>
+        <small id="verificationSite"></small><small id="codeExpiry"></small>
+        <div class="auth-controls"><button id="authBrowser" type="button">Open verification page</button><button id="authCopy" type="button">Copy code</button></div>
+      </div>
+      <small id="providerHint"></small>
+      <label>Model<select id="model" required></select></label>
+      <label id="apiKeyRow">API key<input id="key" type="password" autocomplete="off" placeholder="Leave blank to keep existing key"></label>
+      <button id="saveConfig" type="submit">Save model</button>
+    </form>
+    <details class="advanced"><summary>Advanced</summary><div class="auth-controls"><button id="terminal" type="button">Terminal</button><button id="logs" type="button">Logs</button><button id="licenses" type="button">Licenses</button></div></details>
+  </section>
+  <main id="transcript" aria-label="Conversation"><div class="empty"><h1>What would you like to do?</h1></div></main>
+  <details id="logPanel" hidden><summary>Logs</summary><pre id="logText"></pre></details>
+  <details id="tasks" hidden><summary>Agent activity</summary><pre id="activity"></pre></details>
+  <footer>
+    <div class="controls"><span id="modelLabel">Choose a model in Settings</span><button id="reset">New context</button><button id="abort">Abort run</button></div>
+    <form id="prompt"><label class="sr-only" for="message">Task</label><textarea id="message" rows="3" placeholder="What should we build?" required></textarea><div class="send"><label>While busy <select id="mode"><option value="followUp">Queue follow-up</option><option value="steer">Steer next turn</option></select></label><button type="submit" id="send">Send ↗</button></div></form>
+    <small id="queue" role="status" hidden></small>
+  </footer>
+</body>
+</html>

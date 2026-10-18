@@ -1,0 +1,6 @@
+[submodule "vendor/termux-app"]
+	path = vendor/termux-app
+	url = https://github.com/termux/termux-app.git
+[submodule "vendor/termux-packages"]
+	path = vendor/termux-packages
+	url = https://github.com/termux/termux-packages.git

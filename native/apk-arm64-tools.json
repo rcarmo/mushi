@@ -1,0 +1,9 @@
+{
+  "purpose": "Optional native ARM64 host tools for building the APK; not shipped in the APK",
+  "publisher": "https://github.com/lzhiyong/android-sdk-tools",
+  "version": "35.0.2",
+  "url": "https://github.com/lzhiyong/android-sdk-tools/releases/download/35.0.2/android-sdk-tools-static-aarch64.zip",
+  "sha256": "db1cea2c4454d5f9c5a802646b2d1cf560b4ee7badbe23e51ab8e1881bb50fc2",
+  "aapt2": "build-tools/aapt2",
+  "note": "Third-party ARM64 build of Android SDK tools. The normal x86-64 CI build uses Google's SDK tools instead."
+}
